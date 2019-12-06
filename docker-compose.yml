@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - '8000:3000'
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/root/react_myapp
