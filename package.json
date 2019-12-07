@@ -55,6 +55,12 @@
         "error",
         "single"
       ],
+      "react/prefer-stateless-function": [
+        "warn",
+        {
+           "ignorePureComponents": true
+        }
+      ],
       "semi": [
         "error",
         "always"
