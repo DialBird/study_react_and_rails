@@ -1,12 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './images/logo.svg';
 import './App.scss';
+import dialbird from './images/dialbird.jpg';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <img src={dialbird} alt="" width='200' />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
