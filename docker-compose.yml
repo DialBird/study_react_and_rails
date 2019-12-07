@@ -8,3 +8,7 @@ services:
     tty: true
     volumes:
       - .:/root/react_myapp
+      - node_modules:/root/react_myapp/node_modules
+volumes:
+  node_modules:
+    driver: local
