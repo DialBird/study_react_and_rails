@@ -25,17 +25,43 @@
   "eslintConfig": {
     "extends": "react-app",
     "rules": {
-      "indent": ["error", 2, { "SwitchCase": 1 }],
-      "linebreak-style": ["error", "unix"],
-      "no-multiple-empty-lines": ["error", { "max": 1 }],
-      "no-redeclare": ["error"],
-      "no-var": ["error"],
-      "quotes": ["error", "single"],
-      "semi": ["error", "always"]
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "no-multiple-empty-lines": [
+        "error",
+        {
+          "max": 1
+        }
+      ],
+      "no-redeclare": [
+        "error"
+      ],
+      "no-var": [
+        "error"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
     },
     "overrides": [
       {
-        "files": ["**/*.ts?(x)"]
+        "files": [
+          "**/*.ts?(x)"
+        ]
       }
     ]
   },
@@ -50,5 +76,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
   }
 }
