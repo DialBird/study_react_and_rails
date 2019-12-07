@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './images/logo.svg';
 import './App.scss';
 import dialbird from './images/dialbird.jpg';
+import Button from './components/Button';
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <Button />
         <a
           className="App-link"
           href="https://reactjs.org"
