@@ -58,7 +58,7 @@
       "react/prefer-stateless-function": [
         "warn",
         {
-           "ignorePureComponents": true
+          "ignorePureComponents": true
         }
       ],
       "semi": [
@@ -87,6 +87,7 @@
     ]
   },
   "devDependencies": {
+    "@storybook/react": "^5.2.8",
     "node-sass": "^4.13.0",
     "postcss-normalize": "^8.0.1"
   }
