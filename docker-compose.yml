@@ -1,14 +1,35 @@
 version: '3'
 services:
+  api:
+    build: ./api
+    depends_on:
+      - db
+    environment:
+      BUNDLE_PATH: /usr/local/bundle
+      RAILS_ENV: 'development'
+      TZ: Asia/Tokyo
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./api:/root/api
+      - bundle:/usr/local/bundle
+  db:
+    image: postgres:11
+    volumes:
+      - data:/var/lib/postgresql/data
   front:
-    build: .
+    build: ./front
     ports:
       - '8000:3000'
     stdin_open: true
     tty: true
     volumes:
-      - .:/root/react_myapp
-      - node_modules:/root/react_myapp/node_modules
+      - ./front:/root/front
+      - node_modules:/root/front/node_modules
 volumes:
+  bundle:
+    driver: local
+  data:
+    driver: local
   node_modules:
     driver: local
