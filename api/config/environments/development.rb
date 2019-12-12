@@ -1,4 +1,9 @@
 Rails.application.configure do
+  config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Credentials' => 'true',
+    'Access-Control-Allow-Origin' => 'http://localhost:8000',
+    'Access-Control-Request-Method' => '*'
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

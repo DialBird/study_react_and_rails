@@ -8,7 +8,9 @@ import {
   useRouteMatch,
   useParams
 } from 'react-router-dom';
-import './App.scss';
+import "./App.scss";
+
+const axios = require('axios').default;
 
 const App: React.FC = () => {
   return (
@@ -50,9 +52,44 @@ const Home: React.FC = () => {
   return <h2>Home</h2>;
 };
 
-const About: React.FC = () => {
-  return <h2>About</h2>;
-};
+interface Dog {
+  id: number,
+  name: string,
+  age: number
+}
+interface Props {}
+interface State {
+  dogs: Dog[]
+}
+
+class About extends React.PureComponent<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = { dogs: [] };
+  }
+  componentDidMount() {
+    axios.get('http://localhost:3040/api/v1/dogs').then((res: any) => {
+      this.setState({dogs: res.data});
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h2>About</h2>
+        <ul>
+          {this.state.dogs.map((dog)=>{
+            return (
+              <div key={dog.id}>
+                <h1>{dog.name}</h1>
+                <p>{dog.age}</p>
+              </div>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  }
+}
 
 const Topics: React.FC = () => {
   const match = useRouteMatch();
