@@ -8,7 +8,7 @@ import {
   useRouteMatch,
   useParams
 } from 'react-router-dom';
-import "./App.scss";
+import './App.scss';
 
 const axios = require('axios').default;
 
