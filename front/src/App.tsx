@@ -67,10 +67,13 @@ class About extends React.PureComponent<Props, State> {
     super(props);
     this.state = { dogs: [] };
   }
-  componentDidMount() {
-    axios.get('http://localhost:3040/api/v1/dogs').then((res: any) => {
+  async componentDidMount() {
+    try {
+      const res = await axios.get('http://localhost:3040/api/v1/dogs');
       this.setState({dogs: res.data});
-    });
+    } catch (error) {
+      console.log(error);
+    }
   }
   render() {
     return (
