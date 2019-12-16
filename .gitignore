@@ -20,6 +20,8 @@ front/npm-debug.log*
 front/yarn-debug.log*
 front/yarn-error.log*
 
+front/src/config/firebase.ts
+
 .DS_Store
 
 # api
